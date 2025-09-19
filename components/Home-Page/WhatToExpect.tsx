@@ -1,10 +1,10 @@
 import { Button } from "@/components/ui/button";
 import {
+  Armchair,
   ArrowDown,
   ArrowRight,
   Cast,
   Lectern,
-  Presentation,
   Waypoints,
 } from "lucide-react";
 import { motion } from "framer-motion";
@@ -39,7 +39,7 @@ const WhatToExpect = () => {
             </span>
 
             <div className="flex items-start gap-3 mt-6">
-              <Presentation className="shrink-0 text-blue-900 dark:text-blue-700" />
+              <Lectern className="shrink-0 text-blue-900 dark:text-blue-700" />
               <p className="-mt-0.5 text-2xl">
                 Gain insights from global tech leaders—explore trends,
                 strategies, and innovations shaping the future.
@@ -54,7 +54,7 @@ const WhatToExpect = () => {
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
             className="hidden md:block bg-muted rounded-xl col-span-1 md:col-span-3 lg:col-span-2 overflow-hidden h-[550px] dark:border"
           >
@@ -69,7 +69,7 @@ const WhatToExpect = () => {
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
             className="hidden md:block bg-muted rounded-xl col-span-1 md:col-span-3 lg:col-span-2 overflow-hidden h-[550px] dark:border"
           >
@@ -89,7 +89,7 @@ const WhatToExpect = () => {
             </span>
 
             <div className="flex items-start gap-3 mt-6">
-              <Lectern className="shrink-0 text-blue-900 dark:text-blue-700" />
+              <Armchair className="shrink-0 text-blue-900 dark:text-blue-700" />
               <p className="-mt-0.5 text-2xl">
                 Join engaging conversations with tech and business
                 experts—unlock ideas, solutions, and fresh perspectives.
@@ -126,7 +126,7 @@ const WhatToExpect = () => {
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
             className="hidden md:block bg-muted rounded-xl col-span-1 md:col-span-3 lg:col-span-2 overflow-hidden h-[550px] dark:border"
           >
@@ -141,7 +141,7 @@ const WhatToExpect = () => {
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
             className="hidden md:block bg-muted rounded-xl col-span-1 md:col-span-3 lg:col-span-2 overflow-hidden h-[550px] dark:border"
           >

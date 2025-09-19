@@ -9,6 +9,7 @@ import Image4 from "@/public/texcellence/4.webp";
 import Image5 from "@/public/texcellence/5.webp";
 import Image6 from "@/public/texcellence/6.jpeg";
 import Image7 from "@/public/texcellence/7.jpeg";
+import { motion } from "framer-motion";
 
 const PreviousConferences = () => {
   return (
@@ -30,57 +31,99 @@ const PreviousConferences = () => {
 
         <div className="space-y-6">
           <div className="flex gap-6">
-            <div className="w-[70%] max-h-96 overflow-hidden rounded-md dark:border border-neutral-800">
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="w-[70%] max-h-96 overflow-hidden rounded-md dark:border border-neutral-800"
+            >
               <Image
                 src={Image1}
                 className="object-cover h-full"
                 alt="TeXcellence 2024"
               />
-            </div>
-            <div className="w-[30%] max-h-96 overflow-hidden rounded-md dark:border border-neutral-800">
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="w-[30%] max-h-96 overflow-hidden rounded-md dark:border border-neutral-800"
+            >
               <Image
                 src={Image2}
                 className="object-cover h-full"
                 alt="TeXcellence 2024"
               />
-            </div>
+            </motion.div>
           </div>
           <div className="grid grid-cols-3 md:grid-cols-6 grid-rows-2 gap-6">
-            <div className="bg-gray-300 rounded-md overflow-hidden max-h-96 col-span-2 dark:border border-neutral-800">
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="bg-gray-300 rounded-md overflow-hidden max-h-96 col-span-2 dark:border border-neutral-800"
+            >
               <Image
                 src={Image3}
                 className="object-cover h-full"
                 alt="TeXcellence 2024"
               />
-            </div>
-            <div className="bg-gray-300 rounded-md overflow-hidden max-h-96 col-span-2 dark:border border-neutral-800">
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="bg-gray-300 rounded-md overflow-hidden max-h-96 col-span-2 dark:border border-neutral-800"
+            >
               <Image
                 src={Image4}
                 className="object-cover h-full"
                 alt="TeXcellence 2024"
               />
-            </div>
-            <div className="bg-gray-300 rounded-md overflow-hidden max-h-96 col-span-2 dark:border border-neutral-800">
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="bg-gray-300 rounded-md overflow-hidden max-h-96 col-span-2 dark:border border-neutral-800"
+            >
               <Image
                 src={Image5}
                 className="object-cover h-full"
                 alt="TeXcellence 2024"
               />
-            </div>
-            <div className="bg-gray-300 rounded-md overflow-hidden max-h-96 col-span-3 dark:border border-neutral-800">
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="bg-gray-300 rounded-md overflow-hidden max-h-96 col-span-3 dark:border border-neutral-800"
+            >
               <Image
                 src={Image6}
                 className="object-cover h-full"
                 alt="TeXcellence 2024"
               />
-            </div>
-            <div className="col-span-3 bg-gray-300 rounded-md overflow-hidden max-h-96 dark:border border-neutral-800">
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="col-span-3 bg-gray-300 rounded-md overflow-hidden max-h-96 dark:border border-neutral-800"
+            >
               <Image
                 src={Image7}
                 className="object-cover h-full"
                 alt="TeXcellence 2024"
               />
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
