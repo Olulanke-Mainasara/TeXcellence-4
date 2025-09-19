@@ -1,0 +1,35 @@
+import React from "react";
+import { Button } from "../ui/button";
+import Link from "next/link";
+import { X } from "lucide-react";
+
+const InnovateX = () => {
+  return (
+    <section className="h-screen relative">
+      <div className="h-[150dvh] absolute -top-1/4 bg-black dark:bg-white w-full -z-10 flex items-center justify-center"></div>
+      <X className="w-[2000px] h-[2000px] absolute top-1/2 right-0 -translate-y-1/2 -z-10 text-white dark:text-black opacity-5" />
+      <div className="flex flex-col items-center justify-center h-full w-full gap-2 text-center">
+        <h2 className="text-4xl sm:text-5xl md:text-9xl text-white dark:text-black font-semibold tracking-tighter">
+          InnovateX
+        </h2>
+        <p className="text-neutral-400 dark:text-neutral-600 text-4xl max-w-3xl">
+          InnovateX Africa is a structured startup pitch competition designed to
+          discover, showcase, and accelerate the most promising tech innovation
+          across the African continent.
+        </p>
+
+        <Link href="/innovatex">
+          <Button
+            size="lg"
+            variant="secondary"
+            className="text-lg mt-4 py-6 cursor-pointer"
+          >
+            Learn more
+          </Button>
+        </Link>
+      </div>
+    </section>
+  );
+};
+
+export default InnovateX;
