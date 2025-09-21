@@ -2,14 +2,17 @@
 
 import Link from "next/link";
 import React from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { ThemeSwitcher } from "./theme-switcher";
-import Logo from "@/public/Texcellence-logo.webp";
-import Image from "next/image";
 import { useTheme } from "next-themes";
+import TeXLogo from "./TeXLogo";
+import { Menu, X } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 const Nav = () => {
   const [top, setTop] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
+  const pathname = usePathname();
   const { theme } = useTheme();
 
   React.useEffect(() => {
@@ -28,6 +31,10 @@ const Nav = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  React.useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
 
   return (
     <motion.nav
@@ -50,17 +57,15 @@ const Nav = () => {
             ? "1px solid rgba(48, 45, 45, 0.5)"
             : "1px solid rgba(255, 255, 255, 0.5)",
         }}
-        className="flex items-center justify-between w-full absolute pr-4 overflow-hidden"
+        className="flex items-center justify-between w-full absolute pr-2 md:pr-4 overflow-hidden"
       >
-        <div className="w-40 py-4 pl-4 bg-gradient-to-r from-white dark:from-background to-transparent">
-          <Image
-            src={Logo}
-            alt="logo"
-            className="w-full invert dark:invert-0"
-          />
-        </div>
+        <Link href="/">
+          <div className="w-40 py-4 pl-4 bg-gradient-to-r from-white dark:from-background to-transparent">
+            <TeXLogo />
+          </div>
+        </Link>
 
-        <header className="flex gap-6 items-center">
+        <header className="gap-6 items-center hidden lg:flex">
           <Link
             href="/agenda"
             className="hover:text-black dark:hover:text-white hover:bg-background px-3 py-2 rounded-lg transition-colors duration-300 text-muted-foreground"
@@ -96,13 +101,68 @@ const Nav = () => {
         <div className="flex gap-4 items-center">
           <Link
             href="/register"
-            className="px-6 py-3 bg-black text-white dark:bg-white dark:text-black rounded-full border border-black dark:border-white hover:bg-background dark:hover:bg-background hover:text-black dark:hover:text-white transition-all duration-150"
+            className="px-6 py-3 bg-black text-white dark:bg-white dark:text-black rounded-full border border-black dark:border-white hover:bg-background dark:hover:bg-background hover:text-black dark:hover:text-white transition-all duration-150 text-xl lg:text-base"
           >
             Register
           </Link>
-          <ThemeSwitcher />
+          <span className="hidden lg:inline-block">
+            <ThemeSwitcher />
+          </span>
+
+          <button className="lg:hidden" onClick={() => setOpen(!open)}>
+            <Menu />
+          </button>
         </div>
       </motion.div>
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0, display: "none" }}
+            animate={{ opacity: 1, display: "flex" }}
+            exit={{ opacity: 0, transitionEnd: { display: "none" } }}
+            className="absolute h-screen w-screen bg-background flex flex-col"
+          >
+            <div className="flex items-center justify-between pr-1 md:pr-4">
+              <Link href="/">
+                <div className="w-40 py-4 pl-4 bg-gradient-to-r from-white dark:from-background to-transparent">
+                  <TeXLogo />
+                </div>
+              </Link>
+              <button onClick={() => setOpen(!open)}>
+                <X className="size-8" />
+              </button>
+            </div>
+            <div className="grow">
+              <header className="gap-6 items-center flex flex-col justify-center h-full text-5xl">
+                <Link href="/agenda" className="text-black dark:text-white">
+                  Agenda
+                </Link>
+                <Link href="/speakers" className="text-black dark:text-white">
+                  Speakers
+                </Link>
+                <Link href="/innovatex" className="text-black dark:text-white">
+                  InnovateX
+                </Link>
+                <Link href="/explore" className="text-black dark:text-white">
+                  Explore
+                </Link>
+                <Link href="/contact" className="text-black dark:text-white">
+                  Contact
+                </Link>
+                <div className="flex gap-4 items-center text-base">
+                  <Link
+                    href="/register"
+                    className="px-6 py-3 bg-black text-white dark:bg-white dark:text-black rounded-full border border-black dark:border-white hover:bg-background dark:hover:bg-background hover:text-black dark:hover:text-white transition-all duration-150 text-xl lg:text-base"
+                  >
+                    Register
+                  </Link>
+                  <ThemeSwitcher />
+                </div>
+              </header>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.nav>
   );
 };

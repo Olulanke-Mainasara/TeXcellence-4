@@ -17,9 +17,9 @@ import LiveDemo from "@/public/whatToExpect/live-demo.webp";
 const WhatToExpect = () => {
   return (
     <section className="min-h-screen flex items-center justify-center">
-      <div className="w-full max-w-(--breakpoint-xl) mx-auto py-12 px-6">
-        <div className="flex items-center justify-between">
-          <h2 className="text-3xl sm:text-4xl md:text-6xl font-semibold tracking-tighter">
+      <div className="w-full max-w-(--breakpoint-xl) mx-auto py-12 px-4 md:px-6">
+        <div className="flex flex-col md:flex-row md:items-center gap-4 justify-between">
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-semibold tracking-tighter">
             Transform Your Business <br />
             at Texcellence 2025.
           </h2>
@@ -30,9 +30,15 @@ const WhatToExpect = () => {
         </div>
 
         <div className="mt-8 grid sm:grid-cols-2 md:grid-cols-5 lg:grid-cols-3 gap-6 items-center">
-          <div className="bg-muted rounded-xl p-6 col-span-1 md:col-span-2 lg:col-span-1">
+          <div className="bg-muted rounded-xl p-4 lg:p-6 col-span-1 md:col-span-2 lg:col-span-1">
             {/* Media 1 Mobile */}
-            <div className="md:hidden mb-6 aspect-video w-full bg-background rounded-xl"></div>
+            <div className="md:hidden mb-6 aspect-video w-full bg-background rounded-xl">
+              <Image
+                src={Keynote}
+                alt="Keynote"
+                className="w-full h-full object-cover"
+              />
+            </div>
 
             <span className="text-3xl font-semibold tracking-tight">
               Keynotes
@@ -40,7 +46,7 @@ const WhatToExpect = () => {
 
             <div className="flex items-start gap-3 mt-6">
               <Lectern className="shrink-0 text-blue-900 dark:text-blue-700" />
-              <p className="-mt-0.5 text-2xl">
+              <p className="-mt-0.5 text-xl md:text-base xl:text-2xl">
                 Gain insights from global tech leaders—explore trends,
                 strategies, and innovations shaping the future.
               </p>
@@ -80,9 +86,15 @@ const WhatToExpect = () => {
             />
           </motion.div>
 
-          <div className="bg-muted rounded-xl p-6 col-span-1 md:col-span-2 lg:col-span-1">
+          <div className="bg-muted rounded-xl p-4 lg:p-6 col-span-1 md:col-span-2 lg:col-span-1">
             {/* Media 2 Mobile */}
-            <div className="md:hidden mb-6 aspect-video w-full bg-background rounded-xl"></div>
+            <div className="md:hidden mb-6 aspect-video w-full bg-background rounded-xl">
+              <Image
+                src={Panel}
+                alt="Keynote"
+                className="w-full h-full object-cover"
+              />
+            </div>
 
             <span className="text-3xl font-semibold tracking-tight">
               Panel Sessions
@@ -90,7 +102,7 @@ const WhatToExpect = () => {
 
             <div className="flex items-start gap-3 mt-6">
               <Armchair className="shrink-0 text-blue-900 dark:text-blue-700" />
-              <p className="-mt-0.5 text-2xl">
+              <p className="-mt-0.5 text-xl md:text-base xl:text-2xl">
                 Join engaging conversations with tech and business
                 experts—unlock ideas, solutions, and fresh perspectives.
               </p>
@@ -102,9 +114,15 @@ const WhatToExpect = () => {
           </div>
         </div>
         <div className="mt-8 grid sm:grid-cols-2 md:grid-cols-5 lg:grid-cols-3 gap-6 items-center">
-          <div className="bg-muted rounded-xl p-6 col-span-1 md:col-span-2 lg:col-span-1">
+          <div className="bg-muted rounded-xl p-4 lg:p-6 col-span-1 md:col-span-2 lg:col-span-1">
             {/* Media 3 Mobile */}
-            <div className="md:hidden mb-6 aspect-video w-full bg-background rounded-xl"></div>
+            <div className="md:hidden mb-6 aspect-video w-full bg-background rounded-xl">
+              <Image
+                src={Networking}
+                alt="Keynote"
+                className="w-full h-full object-cover"
+              />
+            </div>
 
             <span className="text-3xl font-semibold tracking-tight">
               Networking
@@ -112,7 +130,7 @@ const WhatToExpect = () => {
 
             <div className="flex items-start gap-3 mt-6">
               <Waypoints className="shrink-0 text-blue-900 dark:text-blue-700" />
-              <p className="-mt-0.5 text-2xl">
+              <p className="-mt-0.5 text-xl md:text-base xl:text-2xl">
                 Connect with key industry decision-makers—build relationships,
                 exchange ideas, and open doors to new opportunities.
               </p>
@@ -152,9 +170,15 @@ const WhatToExpect = () => {
             />
           </motion.div>
 
-          <div className="bg-muted rounded-xl p-6 col-span-1 md:col-span-2 lg:col-span-1">
+          <div className="bg-muted rounded-xl p-4 lg:p-6 col-span-1 md:col-span-2 lg:col-span-1">
             {/* Media 4 Mobile */}
-            <div className="md:hidden mb-6 aspect-video w-full bg-background rounded-xl"></div>
+            <div className="md:hidden mb-6 aspect-video w-full bg-background rounded-xl">
+              <Image
+                src={LiveDemo}
+                alt="Keynote"
+                className="w-full h-full object-cover"
+              />
+            </div>
 
             <span className="text-3xl font-semibold tracking-tight">
               Live Demos
@@ -162,7 +186,7 @@ const WhatToExpect = () => {
 
             <div className="flex items-start gap-3 mt-6">
               <Cast className="shrink-0 text-blue-900 dark:text-blue-700" />
-              <p className="-mt-0.5 text-2xl">
+              <p className="-mt-0.5 text-xl md:text-base xl:text-2xl">
                 Get hands-on experience with cutting-edge technology—explore
                 tools, demos, and real-world applications in action.
               </p>

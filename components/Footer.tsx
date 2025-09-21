@@ -1,3 +1,5 @@
+"use client";
+
 import { Separator } from "@/components/ui/separator";
 import {
   DribbbleIcon,
@@ -36,8 +38,8 @@ const Footer = () => {
   return (
     <footer>
       <div className="max-w-(--breakpoint-xl) mx-auto">
-        <div className="py-8 flex justify-between items-center">
-          <motion.h3 className="text-9xl xl:text-9xl bg-center bg-clip-text overflow-hidden">
+        <div className="py-8 flex flex-col xl:flex-row justify-between items-center gap-6">
+          <motion.h3 className="text-5xl md:text-8xl xl:text-9xl bg-center bg-clip-text overflow-hidden">
             Te<span className="text-blue-900 dark:text-blue-700">X</span>
             cellence
             <span className="text-blue-900 dark:text-blue-700">&apos;</span>4.0
