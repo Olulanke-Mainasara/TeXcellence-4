@@ -13,6 +13,7 @@ import Keynote from "@/public/whatToExpect/keynote.webp";
 import Panel from "@/public/whatToExpect/panel.webp";
 import Networking from "@/public/whatToExpect/networking.webp";
 import LiveDemo from "@/public/whatToExpect/live-demo.webp";
+import Link from "next/link";
 
 const WhatToExpect = () => {
   return (
@@ -52,9 +53,11 @@ const WhatToExpect = () => {
               </p>
             </div>
 
-            <Button className="mt-8 w-full py-6 text-lg">
-              View the Agenda <ArrowRight className="size-6 text-blue-700" />
-            </Button>
+            <Link href="/agenda">
+              <Button className="mt-8 w-full py-6 text-lg cursor-pointer">
+                View the Agenda <ArrowRight className="size-6 text-blue-700" />
+              </Button>
+            </Link>
           </div>
           {/* Media 1 Desktop */}
           <motion.div
@@ -108,9 +111,11 @@ const WhatToExpect = () => {
               </p>
             </div>
 
-            <Button className="mt-8 w-full py-6 text-lg">
-              View the Agenda <ArrowRight className="size-6 text-blue-700" />
-            </Button>
+            <Link href="/agenda">
+              <Button className="mt-8 w-full py-6 text-lg cursor-pointer">
+                View the Agenda <ArrowRight className="size-6 text-blue-700" />
+              </Button>
+            </Link>
           </div>
         </div>
         <div className="mt-8 grid sm:grid-cols-2 md:grid-cols-5 lg:grid-cols-3 gap-6 items-center">
@@ -136,9 +141,11 @@ const WhatToExpect = () => {
               </p>
             </div>
 
-            <Button className="mt-8 w-full py-6 text-lg">
-              View the Agenda <ArrowRight className="size-6 text-blue-700" />
-            </Button>
+            <Link href="/agenda">
+              <Button className="mt-8 w-full py-6 text-lg cursor-pointer">
+                View the Agenda <ArrowRight className="size-6 text-blue-700" />
+              </Button>
+            </Link>
           </div>
           {/* Media 3 Desktop */}
           <motion.div
@@ -192,9 +199,11 @@ const WhatToExpect = () => {
               </p>
             </div>
 
-            <Button className="mt-8 w-full py-6 text-lg">
-              View the Agenda <ArrowRight className="size-6 text-blue-700" />
-            </Button>
+            <Link href="/agenda">
+              <Button className="mt-8 w-full py-6 text-lg cursor-pointer">
+                View the Agenda <ArrowRight className="size-6 text-blue-700" />
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

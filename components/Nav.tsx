@@ -65,7 +65,7 @@ const Nav = () => {
           </div>
         </Link>
 
-        <header className="gap-6 items-center hidden lg:flex">
+        <header className={`gap-6 items-center hidden lg:flex`}>
           <Link
             href="/agenda"
             className="hover:text-black dark:hover:text-white hover:bg-background px-3 py-2 rounded-lg transition-colors duration-300 text-muted-foreground"
@@ -101,15 +101,17 @@ const Nav = () => {
         <div className="flex gap-4 items-center">
           <Link
             href="/register"
-            className="px-6 py-3 bg-black text-white dark:bg-white dark:text-black rounded-full border border-black dark:border-white hover:bg-background dark:hover:bg-background hover:text-black dark:hover:text-white transition-all duration-150 text-xl lg:text-base"
+            className={`px-6 py-3 bg-black text-white dark:bg-white dark:text-black rounded-full border border-black dark:border-white hover:bg-background dark:hover:bg-background hover:text-black dark:hover:text-white transition-all duration-150 text-xl lg:text-base ${
+              pathname === "/register" ? "hidden" : ""
+            }`}
           >
             Register
           </Link>
-          <span className="hidden lg:inline-block">
+          <span className={`hidden lg:inline-block`}>
             <ThemeSwitcher />
           </span>
 
-          <button className="lg:hidden" onClick={() => setOpen(!open)}>
+          <button className={`lg:hidden`} onClick={() => setOpen(!open)}>
             <Menu />
           </button>
         </div>
@@ -152,7 +154,9 @@ const Nav = () => {
                 <div className="flex gap-4 items-center text-base">
                   <Link
                     href="/register"
-                    className="px-6 py-3 bg-black text-white dark:bg-white dark:text-black rounded-full border border-black dark:border-white hover:bg-background dark:hover:bg-background hover:text-black dark:hover:text-white transition-all duration-150 text-xl lg:text-base"
+                    className={`px-6 py-3 bg-black text-white dark:bg-white dark:text-black rounded-full border border-black dark:border-white hover:bg-background dark:hover:bg-background hover:text-black dark:hover:text-white transition-all duration-150 text-xl lg:text-base ${
+                      pathname === "/register" ? "hidden" : ""
+                    }`}
                   >
                     Register
                   </Link>

@@ -24,7 +24,7 @@ const Sponsors = () => {
             </h2>
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-8 max-w-(--breakpoint-lg)">
+          <div className="flex flex-wrap items-center justify-center gap-8 lg:gap-12 max-w-(--breakpoint-lg)">
             <Image src={Sponsor1} alt="Sponsor" className="w-40 md:w-60" />
             <Image src={Sponsor2} alt="Sponsor" className="w-40 md:w-60" />
             <Image src={Sponsor3} alt="Sponsor" className="w-40 md:w-60" />

@@ -23,7 +23,7 @@ const Speakers = () => {
         </div>
 
         <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-6 gap-y-12">
-          {speakersInfo.slice(0, 6).map((speaker) => (
+          {speakersInfo.slice(0, 4).map((speaker) => (
             <div
               key={speaker.name}
               className="relative group rounded-lg overflow-hidden"
@@ -50,7 +50,7 @@ const Speakers = () => {
         <Link href="/speakers" className="mx-auto">
           <Button className="text-lg py-6 cursor-pointer">
             <User className="size-6 text-blue-700" />
-            See all Speakers
+            See all speakers
           </Button>
         </Link>
       </div>

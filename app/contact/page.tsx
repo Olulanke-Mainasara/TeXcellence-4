@@ -19,23 +19,8 @@ const Contact = () => (
             <p className="mt-2.5 mb-4 text-muted-foreground">
               Our friendly team is here to help.
             </p>
-            <Link
-              className="font-medium"
-              href="mailto:akashmoradiya3444@gmail.com"
-            >
-              akashmoradiya3444@gmail.com
-            </Link>
-          </div>
-          <div className="border border-dashed bg-primary/1 p-6 pb-10 rounded-lg">
-            <div className="h-12 w-12 flex items-center justify-center bg-primary/5 dark:bg-primary/10 text-primary rounded-full">
-              <MessageCircle />
-            </div>
-            <h3 className="mt-8 font-bold text-xl">Live chat</h3>
-            <p className="mt-2.5 mb-4 text-muted-foreground">
-              Our friendly team is here to help.
-            </p>
-            <Link className="font-medium" href="#">
-              Start new chat
+            <Link className="font-medium" href="mailto:info@cwg-plc.com">
+              info@cwg-plc.com
             </Link>
           </div>
           <div className="border border-dashed bg-primary/1 p-6 pb-10 rounded-lg">
@@ -51,7 +36,8 @@ const Contact = () => (
               href="https://map.google.com"
               target="_blank"
             >
-              100 Smith Street Collingwood <br /> VIC 3066 AU
+              Block 54A, Plot 10, Off Rufus Giwa Street, Off Adebayo Doherty
+              Road, Off Admiralty Way, Lekki Phase 1, Lagos.
             </Link>
           </div>
           <div className="border border-dashed bg-primary/1 p-6 pb-10 rounded-lg">
@@ -62,11 +48,20 @@ const Contact = () => (
             <p className="mt-2.5 mb-4 text-muted-foreground">
               Mon-Fri from 8am to 5pm.
             </p>
-            <Link
-              className="font-medium"
-              href="tel:akashmoradiya3444@gmail.com"
-            >
-              +1 (555) 000-0000
+            <Link className="font-medium" href="tel:07074699822">
+              07074699822 | WhatsApp
+            </Link>
+          </div>
+          <div className="border border-dashed bg-primary/1 p-6 pb-10 rounded-lg">
+            <div className="h-12 w-12 flex items-center justify-center bg-primary/5 dark:bg-primary/10 text-primary rounded-full">
+              <MessageCircle />
+            </div>
+            <h3 className="mt-8 font-bold text-xl">Live chat</h3>
+            <p className="mt-2.5 mb-4 text-muted-foreground">
+              Our friendly team is here to help.
+            </p>
+            <Link className="font-medium" href="#">
+              Start new chat
             </Link>
           </div>
         </div>

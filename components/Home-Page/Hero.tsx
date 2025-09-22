@@ -6,14 +6,16 @@ import { useTheme } from "next-themes";
 
 const Hero = () => {
   const { theme } = useTheme();
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 1366;
 
   return (
     <section className="xl:min-h-screen pt-28 relative md:px-6">
       <div className="text-center w-full space-y-2">
         <motion.h1
-          initial={{ y: "25dvh" }}
+          initial={isMobile ? { y: "35dvh" } : { y: "25dvh" }}
           animate={{ y: 0 }}
           transition={{ duration: 1.5, delay: 2, ease: "anticipate" }}
+          suppressHydrationWarning
           className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl xl:text-[180px] bg-center bg-clip-text overflow-hidden"
         >
           Te<span className="text-blue-900 dark:text-blue-700">X</span>cellence
@@ -89,7 +91,7 @@ const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 2.8 }}
-          className="xl:h-screen w-full max-w-(--breakpoint-2xl) mx-auto mt-10 rounded-2xl overflow-hidden relative shadow-2xl shadow-black dark:shadow-neutral-400/30"
+          className="xl:h-screen xl:max-h-[730px] w-full max-w-(--breakpoint-2xl) mx-auto mt-10 rounded-2xl overflow-hidden relative shadow-2xl shadow-black dark:shadow-neutral-400/30"
         >
           <Image
             src={heroBanner}

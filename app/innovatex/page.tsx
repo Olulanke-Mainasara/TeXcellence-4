@@ -1,154 +1,167 @@
 "use client";
 
-import TeXLogo from "@/components/TeXLogo";
-import { Button } from "@/components/ui/button";
+import { InnovateXForm } from "@/components/Home-Page/Forms/InnovateX";
 import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Separator } from "@/components/ui/separator";
-import { zodResolver } from "@hookform/resolvers/zod";
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { cn } from "@/lib/utils";
+import { MessageCircle } from "lucide-react";
+import { useState } from "react";
+import { faqs } from "@/components/staticData";
+import Footer from "@/components/Footer";
+import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
 
-const formSchema = z.object({
-  email: z.string().email(),
-  password: z.string().min(8, "Password must be at least 8 characters long"),
-});
-
-const SignUp04Page = () => {
-  const form = useForm<z.infer<typeof formSchema>>({
-    defaultValues: {
-      email: "",
-      password: "",
-    },
-    resolver: zodResolver(formSchema),
-  });
-
-  const onSubmit = (data: z.infer<typeof formSchema>) => {
-    console.log(data);
-  };
+const InnovateX = () => {
+  const [value, setValue] = useState<string>();
 
   return (
-    <div className="h-screen flex items-center justify-center">
-      <div className="w-full h-full grid lg:grid-cols-2 p-4">
-        <div className="max-w-xs m-auto w-full flex flex-col items-center">
-          <TeXLogo />
-          <p className="mt-4 text-xl font-semibold tracking-tight">
-            Sign up for Shadcn UI Blocks
-          </p>
+    <>
+      <section className="pt-20">
+        <section className="w-full max-w-(--breakpoint-xl) flex flex-col-reverse lg:flex-row lg:justify-between gap-8 lg:gap-0 p-4 md:px-6 xl:px-0 items-center">
+          <InnovateXForm />
+          <div className="bg-muted rounded-lg p-6 lg:w-1/2">
+            <div className="h-full flex flex-col gap-14 justify-around">
+              <div>
+                <p className="max-w-lg">
+                  InnovateX is a structured startup pitch competition designed
+                  to discover, showcase, and accelerate the most promising tech
+                  innovation across the African continent.
+                </p>
+              </div>
 
-          <Button className="mt-8 w-full gap-3">
-            <GoogleLogo />
-            Continue with Google
-          </Button>
+              <h1 className="text-7xl md:text-8xl text-center">
+                Innovate
+                <span className="text-blue-900 dark:text-blue-700">X</span>
+              </h1>
 
-          <div className="my-7 w-full flex items-center justify-center overflow-hidden">
-            <Separator />
-            <span className="text-sm px-2">OR</span>
-            <Separator />
+              <div className="flex justify-end">
+                <p className="text-right max-w-[480px]">
+                  By leveraging the Texcellence Conference to provide a global
+                  platform, substantial financial support, and mentorship from
+                  industry leaders, InnovateX aims to bridge the gap between
+                  African startups with promising ideas into scalable businesses
+                  with global impact.
+                </p>
+              </div>
+            </div>
           </div>
+        </section>
 
-          <Form {...form}>
-            <form
-              className="w-full space-y-4"
-              onSubmit={form.handleSubmit(onSubmit)}
-            >
-              <FormField
-                control={form.control}
-                name="email"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Email</FormLabel>
-                    <FormControl>
-                      <Input
-                        type="email"
-                        placeholder="Email"
-                        className="w-full"
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="password"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Password</FormLabel>
-                    <FormControl>
-                      <Input
-                        type="password"
-                        placeholder="Password"
-                        className="w-full"
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <Button type="submit" className="mt-4 w-full">
-                Continue with Email
-              </Button>
-            </form>
-          </Form>
+        <section>
+          <div className="w-full max-w-(--breakpoint-xl) mx-auto px-4 md:px-6 xl:px-0 flex flex-col-reverse gap-6 md:gap-0 md:flex-row my-24">
+            <div className="p-8 rounded-lg bg-muted w-full">
+              <h2 className="text-4xl md:text-5xl leading-[1.15]! font-semibold tracking-tighter">
+                Eligibility Criteria
+              </h2>
+              <p className="mt-4 text-muted-foreground text-lg">
+                Startups must meet all of the following requirements before
+                applying:
+              </p>
+              <div className="mt-4">
+                <ul className="list-disc space-y-2 text-lg">
+                  <li>Must not have received seed funding</li>
+                  <li>Employ under 10 team members, founders included.</li>
+                  <li>Have been in operation for 3 years or less</li>
+                  <li>
+                    Present at least a working prototype or Minimum Viable
+                    Product (MVP)
+                  </li>
+                  <li>
+                    Offer a tech-driven solution with potential for scaling
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="flex flex-col justify-center md:items-center lg:w-full">
+              <h2 className="text-4xl md:text-5xl font-semibold tracking-tighter">
+                Benefits
+              </h2>
+              <div className="mt-4 pl-4 md:pl-9">
+                <ul className="list-disc text-lg space-y-2 max-w-sm">
+                  <li>
+                    Equity-free cash prizes for first, second, and third place
+                    winners
+                  </li>
+                  <li>Media coverage package</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
 
-          <p className="mt-5 text-sm text-center">
-            Already have an account?
-            <Link href="#" className="ml-1 underline text-muted-foreground">
-              Log in
-            </Link>
-          </p>
-        </div>
-        <div className="bg-muted hidden lg:block rounded-lg border" />
-      </div>
-    </div>
+        <section className="flex flex-col gap-6 items-center justify-center px-4 md:px-6 xl:px-0 mt-24 mb-16">
+          <div className="w-full max-w-(--breakpoint-xl)">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl leading-[1.15]! font-semibold tracking-tighter">
+              Frequently Asked Questions
+            </h2>
+            <div className="mt-4 w-full grid md:grid-cols-2 gap-x-10">
+              <Accordion
+                type="single"
+                collapsible
+                className="w-full"
+                value={value}
+                onValueChange={setValue}
+              >
+                {faqs.slice(0, 5).map(({ question, answer }, index) => (
+                  <AccordionItem key={question} value={`question-${index}`}>
+                    <div className="flex">
+                      <AccordionTrigger
+                        className={cn(
+                          "flex flex-1 items-center justify-between py-4 font-semibold transition-all hover:underline [&[data-state=open]>svg]:rotate-45",
+                          "text-start text-lg"
+                        )}
+                      >
+                        {question}
+                      </AccordionTrigger>
+                    </div>
+                    <AccordionContent className="text-base text-muted-foreground text-pretty">
+                      {answer}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+              <Accordion
+                type="single"
+                collapsible
+                className="w-full"
+                value={value}
+                onValueChange={setValue}
+              >
+                {faqs.slice(5, 10).map(({ question, answer }, index) => (
+                  <AccordionItem key={question} value={`question-${index + 5}`}>
+                    <div className="flex">
+                      <AccordionTrigger
+                        className={cn(
+                          "flex flex-1 items-center justify-between py-4 font-semibold tracking-tight transition-all hover:underline [&[data-state=open]>svg]:rotate-45",
+                          "text-start text-lg"
+                        )}
+                      >
+                        {question}
+                      </AccordionTrigger>
+                    </div>
+                    <AccordionContent className="text-base text-muted-foreground text-pretty">
+                      {answer}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
+          </div>
+          <Link href="/faqs" className="mx-auto">
+            <Button className="cursor-pointer py-6 text-lg">
+              <MessageCircle className="size-6 text-blue-700" />
+              See more questions
+            </Button>
+          </Link>
+        </section>
+      </section>
+      <Footer />
+    </>
   );
 };
 
-const GoogleLogo = () => (
-  <svg
-    width="1.2em"
-    height="1.2em"
-    id="icon-google"
-    viewBox="0 0 16 16"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className="inline-block shrink-0 align-sub text-inherit size-lg"
-  >
-    <g clipPath="url(#clip0)">
-      <path
-        d="M15.6823 8.18368C15.6823 7.63986 15.6382 7.0931 15.5442 6.55811H7.99829V9.63876H12.3194C12.1401 10.6323 11.564 11.5113 10.7203 12.0698V14.0687H13.2983C14.8122 12.6753 15.6823 10.6176 15.6823 8.18368Z"
-        fill="#4285F4"
-      ></path>
-      <path
-        d="M7.99812 16C10.1558 16 11.9753 15.2915 13.3011 14.0687L10.7231 12.0698C10.0058 12.5578 9.07988 12.8341 8.00106 12.8341C5.91398 12.8341 4.14436 11.426 3.50942 9.53296H0.849121V11.5936C2.2072 14.295 4.97332 16 7.99812 16Z"
-        fill="#34A853"
-      ></path>
-      <path
-        d="M3.50665 9.53295C3.17154 8.53938 3.17154 7.4635 3.50665 6.46993V4.4093H0.849292C-0.285376 6.66982 -0.285376 9.33306 0.849292 11.5936L3.50665 9.53295Z"
-        fill="#FBBC04"
-      ></path>
-      <path
-        d="M7.99812 3.16589C9.13867 3.14825 10.241 3.57743 11.067 4.36523L13.3511 2.0812C11.9048 0.723121 9.98526 -0.0235266 7.99812 -1.02057e-05C4.97332 -1.02057e-05 2.2072 1.70493 0.849121 4.40932L3.50648 6.46995C4.13848 4.57394 5.91104 3.16589 7.99812 3.16589Z"
-        fill="#EA4335"
-      ></path>
-    </g>
-    <defs>
-      <clipPath id="clip0">
-        <rect width="15.6825" height="16" fill="white"></rect>
-      </clipPath>
-    </defs>
-  </svg>
-);
-
-export default SignUp04Page;
+export default InnovateX;
