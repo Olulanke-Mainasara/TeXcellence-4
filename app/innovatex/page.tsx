@@ -21,7 +21,7 @@ const InnovateX = () => {
   return (
     <>
       <section className="pt-20">
-        <section className="w-full max-w-(--breakpoint-xl) flex flex-col-reverse lg:flex-row lg:justify-between gap-8 lg:gap-0 p-4 md:px-6 xl:px-0 items-center">
+        <section className="w-full max-w-(--breakpoint-xl) mx-auto flex flex-col-reverse lg:flex-row lg:justify-between gap-8 lg:gap-0 p-4 md:px-6 xl:px-0 items-center">
           <InnovateXForm />
           <div className="bg-muted rounded-lg p-6 lg:w-1/2">
             <div className="h-full flex flex-col gap-14 justify-around">

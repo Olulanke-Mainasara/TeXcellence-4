@@ -6,8 +6,8 @@ import RegisterImg from "@/public/register.jpg";
 
 const Register = () => {
   return (
-    <div className="h-screen flex items-center justify-center">
-      <div className="w-full h-full grid lg:grid-cols-2 items-center">
+    <section className="h-screen flex items-center justify-center">
+      <div className="w-full h-full grid lg:grid-cols-2 items-center pt-12 md:pt-0">
         <RegistrationForm />
         <div className="bg-muted hidden lg:block border-l h-4/5 rounded-tl-2xl rounded-bl-2xl overflow-hidden">
           <Image
@@ -17,7 +17,7 @@ const Register = () => {
           />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
